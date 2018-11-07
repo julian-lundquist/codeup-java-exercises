@@ -7,9 +7,9 @@ public class ControlFlowExercises {
 //        System.out.println(i);
 
         int i = 2;
-        i = i * i;
+        double pow = Math.pow(i, i);
         do {
-            System.out.println(i);
+            System.out.println(pow);
         } while (i < 1000000);
     }
 }
