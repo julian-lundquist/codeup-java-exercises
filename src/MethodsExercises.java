@@ -14,7 +14,7 @@ public class MethodsExercises {
         int userInput = getInteger(1, 10);
         System.out.println("Your integer is: " + userInput);
 
-        userInteractionFactorial(sc);
+        inputFactorial(sc);
 
         rollDiceGame(sc);
 
@@ -49,7 +49,7 @@ public class MethodsExercises {
     }
 
 
-    public static long calculateFactorial(int num) {
+    public static long calcFactorial(int num) {
         int output = 1;
         for (int i = 1; i <= num; i += 1) {
             output *= i;
@@ -72,20 +72,20 @@ public class MethodsExercises {
         }
     }
 
-    public static void userInteractionFactorial(Scanner sc) {
-        boolean willContinue;
+    public static void inputFactorial(Scanner sc) {
+        boolean keepGoing;
         String userChoice;
         do {
             System.out.println("Please enter an integer from 1 to 12");
             int userInt = getInteger(1, 12);
-            System.out.println(calculateFactorial(userInt));
+            System.out.println(calcFactorial(userInt));
             do {
                 System.out.println("Do you wish to continue? [y/n]: ");
                 userChoice = sc.next().trim();
             } while (!userChoice.equalsIgnoreCase("y") & !userChoice.equalsIgnoreCase("n"));
 
-            willContinue = userChoice.equalsIgnoreCase("y");
-        } while (willContinue);
+            keepGoing = userChoice.equalsIgnoreCase("y");
+        } while (keepGoing);
     }
 
     public static int randomWithRange(int min, int max)
@@ -116,6 +116,12 @@ public class MethodsExercises {
     }
     public static double multiply (double num1, double num2) {
         return num1 * num2;
+    }
+    public static int multiply2 (int num1, int num2) {
+        if (num2 == 0) {
+            return 0;
+        }
+        return num1 + multiply2(num1, num2 - 1);
     }
     public static double divide (double num1, double num2) {
         return num1 / num2;
