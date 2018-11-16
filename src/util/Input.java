@@ -3,9 +3,14 @@ package util;
 import java.util.Scanner;
 
 public class Input {
-    private Scanner scn = new Scanner(System.in);
+    private Scanner scn;
+
+    public Input(Scanner scn) {
+        this.scn = scn;
+    }
+
     public String getString() {
-        return scn.next();
+        return scn.nextLine();
     }
 
     public boolean yesNo() {

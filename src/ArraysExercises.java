@@ -2,10 +2,9 @@ import java.util.Arrays;
 
 public class ArraysExercises {
 
-    public static Person[] addPerson(Person[] people, Person person) {
+    public static Person[] addPerson (Person[] people, Person person) {
         Person[] people1 = Arrays.copyOf(people, people.length + 1);
         people1[people1.length - 1] = new Person(person.getName());
-        System.out.println(people1[3].getName());
         return people1;
     }
 
@@ -24,7 +23,7 @@ public class ArraysExercises {
 //            System.out.println(people[i].getName());
 //        }
 
-        addPerson(people, new Person("Jack"));
+        Person[] people1 = addPerson(people, new Person("Jack"));
 
 //        String[] person = new String[3];
 //

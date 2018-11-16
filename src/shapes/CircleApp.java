@@ -6,8 +6,8 @@ import java.util.Scanner;
 
 public class CircleApp {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        Input in = new Input();
+        Scanner scn = new Scanner(System.in);
+        Input in = new Input(scn);
         System.out.println("Please enter a radius length.");
         double radius = in.getDouble(1, 10);
         Circle c = new Circle(radius);
