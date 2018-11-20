@@ -23,6 +23,17 @@ public class Input {
         return false;
     }
 
+    public int getInt() {
+        int output;
+        try {
+            output = Integer.valueOf(scn.nextLine());
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid int, try again.");
+            return getInt();
+        }
+        return output;
+    }
+
     public int getInt(int min, int max) {
         System.out.println("Enter an Integer");
         if (!scn.hasNextInt()) {
@@ -39,6 +50,17 @@ public class Input {
         }
     }
 
+    public double getDouble() {
+        double output;
+        try {
+            output = Double.valueOf(scn.nextLine());
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid double, try again.");
+            return getDouble();
+        }
+        return output;
+    }
+
     public double getDouble(double min, double max) {
         System.out.println("Enter a Double");
         if (!scn.hasNextDouble()) {
@@ -48,7 +70,7 @@ public class Input {
         double userInput = scn.nextDouble();
         if (userInput >= min && userInput <= max) {
             System.out.println(userInput + " In range!");
-            return userInput;
+            return Double.valueOf(userInput);
         } else {
             System.out.println("Number not in range!");
             return getDouble(min, max);
@@ -56,6 +78,9 @@ public class Input {
     }
 
     public static void main(String[] args) {
-
+        Input in = new Input(new Scanner(System.in));
+        System.out.println("Enter number: ");
+        double userInt = in.getDouble();
+        System.out.println(userInt);
     }
 }
